@@ -16,7 +16,6 @@ body {
     color: white;
 }
 
-/* CAIXA PRINCIPAL */
 .container {
     background: rgba(0,0,0,0.3);
     padding: 30px;
@@ -29,7 +28,6 @@ body {
     z-index: 1;
 }
 
-/* FOTO COM MOLDURA */
 .foto {
     width: 200px;
     height: 200px;
@@ -46,7 +44,6 @@ body {
     border-radius: 15px;
 }
 
-/* TEXTO */
 h1 {
     margin: 10px 0;
 }
@@ -57,7 +54,6 @@ h1 {
     margin-bottom: 25px;
 }
 
-/* BOTÃO */
 button {
     background: #8b1e3f;
     border: none;
@@ -74,7 +70,6 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* FUNDO ANIMADO */
 .hearts {
     position: fixed;
     inset: 0;
@@ -153,12 +148,10 @@ button:hover {
 
 <div class="container">
 
-    <!-- FOTO -->
     <div class="foto">
        <img src="./IMG_20220710_173545.jpg">
     </div>
 
-    <!-- TEXTO -->
     <h1>Meu amor 💖</h1>
 
     <div class="texto">
@@ -167,7 +160,6 @@ button:hover {
  Isso aqui é só um pedacinho do quanto você é importante pra mim, e nada aqui é comparado com sua beleza.
     </div>
 
-    <!-- BOTÃO -->
     <button onclick="surpresa()">Tem algo aqui…</button>
 
 </div>
@@ -177,7 +169,6 @@ function surpresa() {
     window.location.href = "https://youtu.be/-UWUTfbCW2c?si=-MpCbmR2DnI9s75s";
 }
 
-/* CRIAR CORAÇÕES + "EU TE AMO" */
 const container = document.querySelector('.hearts');
 
 function criarItem() {
