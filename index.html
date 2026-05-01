@@ -82,14 +82,19 @@ button:hover {
     z-index: 0;
     pointer-events: none;
 }
-
 .item {
     position: fixed;
     bottom: -80px;
-    color: #ff2f6d;
+    color: #ff0033;
     white-space: nowrap;
     font-weight: bold;
-    text-shadow: 0 0 10px #ff2f6d, 0 0 20px #ff6b9a;
+
+    text-shadow: 
+        0 0 8px #ff0033,
+        0 0 16px #ff0033,
+        0 0 25px #ff1a4d,
+        0 0 35px #ff4d6d;
+
     animation: subir linear forwards;
 }
 
@@ -152,14 +157,19 @@ function criarItem() {
     const item = document.createElement('div');
     item.classList.add('item');
 
-    // alterna entre coração e texto
-    if (Math.random() > 0.5) {
-        item.innerText = '❤';
-        item.style.fontSize = (15 + Math.random() * 25) + 'px';
-    } else {
-        item.innerText = 'eu te amo';
-        item.style.fontSize = (12 + Math.random() * 10) + 'px';
-    }
+const isMobile = window.innerWidth < 768;
+
+if (Math.random() > 0.5) {
+    item.innerText = '❤';
+    item.style.fontSize = isMobile 
+        ? (25 + Math.random() * 30) + 'px'
+        : (15 + Math.random() * 25) + 'px';
+} else {
+    item.innerText = 'eu te amo';
+    item.style.fontSize = isMobile 
+        ? (18 + Math.random() * 15) + 'px'
+        : (12 + Math.random() * 10) + 'px';
+}
 
  item.style.left = Math.random() * 100 + 'vw';
 item.style.animation = `subir ${(6 + Math.random() * 4)}s linear forwards`;
