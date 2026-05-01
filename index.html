@@ -87,11 +87,11 @@ button:hover {
 
 .item {
     position: absolute;
-    bottom: -20px;
-    color: rgba(255, 80, 120, 0.35);
-    animation: subir 8s linear infinite;
+    bottom: -30px;
+    color: rgba(255, 80, 120, 0.4);
+    animation: subir linear infinite;
     white-space: nowrap;
-    text-shadow: 0 0 8px rgba(255, 50, 100, 0.5);
+    text-shadow: 0 0 8px rgba(255, 50, 100, 0.6);
 }
 }
 
@@ -100,11 +100,11 @@ button:hover {
         transform: translateY(0) scale(1);
         opacity: 0;
     }
-    20% {
-        opacity: 0.6;
+    10% {
+        opacity: 0.7;
     }
     100% {
-        transform: translateY(-120vh) scale(1.5);
+        transform: translateY(-120vh) scale(1.4);
         opacity: 0;
     }
 }
@@ -157,7 +157,8 @@ function criarItem() {
         item.style.fontSize = (12 + Math.random() * 10) + 'px';
     }
 
-    item.style.left = Math.random() * 100 + 'vw';
+  item.style.left = Math.random() * 100 + 'vw';
+item.style.animationDuration = (6 + Math.random() * 4) + 's';
 
     container.appendChild(item);
 
