@@ -25,6 +25,8 @@ body {
     width: 320px;
     backdrop-filter: blur(10px);
     box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 1;
 }
 
 /* FOTO COM MOLDURA */
@@ -71,10 +73,44 @@ button:hover {
     background: #b32d57;
     transform: scale(1.05);
 }
+
+/* FUNDO ANIMADO */
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.item {
+    position: absolute;
+    color: rgba(255, 100, 150, 0.15);
+    animation: subir 8s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+    }
+}
 </style>
 </head>
 
 <body>
+
+<div class="hearts"></div>
 
 <div class="container">
 
@@ -88,8 +124,8 @@ button:hover {
 
     <div class="texto">
  Eu não entendo, quanto mais tento falar de você, vejo que palavras não são suficientes.
-            Pode estar o caos, mas tudo fica melhor quando é com você.
-Isso aqui é só um pedacinho do quanto você é importante pra mim, e nada aqui é comparado com sua beleza.
+ Pode estar o caos, mas tudo fica melhor quando é com você.
+ Isso aqui é só um pedacinho do quanto você é importante pra mim, e nada aqui é comparado com sua beleza.
     </div>
 
     <!-- BOTÃO -->
@@ -101,6 +137,33 @@ Isso aqui é só um pedacinho do quanto você é importante pra mim, e nada aqui
 function surpresa() {
     window.location.href = "https://youtu.be/-UWUTfbCW2c?si=-MpCbmR2DnI9s75s";
 }
+
+/* CRIAR CORAÇÕES + "EU TE AMO" */
+const container = document.querySelector('.hearts');
+
+function criarItem() {
+    const item = document.createElement('div');
+    item.classList.add('item');
+
+    // alterna entre coração e texto
+    if (Math.random() > 0.5) {
+        item.innerText = '❤';
+        item.style.fontSize = (15 + Math.random() * 25) + 'px';
+    } else {
+        item.innerText = 'eu te amo';
+        item.style.fontSize = (12 + Math.random() * 10) + 'px';
+    }
+
+    item.style.left = Math.random() * 100 + 'vw';
+
+    container.appendChild(item);
+
+    setTimeout(() => {
+        item.remove();
+    }, 8000);
+}
+
+setInterval(criarItem, 400);
 </script>
 
 </body>
