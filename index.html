@@ -162,12 +162,12 @@ const isMobile = window.innerWidth < 768;
 if (Math.random() > 0.5) {
     item.innerText = '❤';
     item.style.fontSize = isMobile 
-        ? (25 + Math.random() * 30) + 'px'
-        : (15 + Math.random() * 25) + 'px';
+        ? (40 + Math.random() * 40) + 'px'   // 🔥 BEM GRANDE no celular
+        : (18 + Math.random() * 25) + 'px';
 } else {
     item.innerText = 'eu te amo';
     item.style.fontSize = isMobile 
-        ? (18 + Math.random() * 15) + 'px'
+        ? (28 + Math.random() * 25) + 'px'   // 🔥 TEXTO GRANDE também
         : (12 + Math.random() * 10) + 'px';
 }
 
