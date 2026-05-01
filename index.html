@@ -86,12 +86,15 @@ button:hover {
 }
 
 .item {
-    position: absolute;
-    bottom: -30px;
-    color: rgba(255, 80, 120, 0.4);
-    animation: subir linear infinite;
+  .item {
+    position: fixed;
+    bottom: -50px;
+    color: rgba(255, 80, 120, 0.6);
     white-space: nowrap;
     text-shadow: 0 0 8px rgba(255, 50, 100, 0.6);
+    animation-name: subir;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
 }
 
 @keyframes subir {
@@ -156,7 +159,7 @@ function criarItem() {
     }
 
   item.style.left = Math.random() * 100 + 'vw';
-item.style.animationDuration = (6 + Math.random() * 4) + 's';
+item.style.animation = `subir ${(6 + Math.random() * 4)}s linear forwards`;
 
     container.appendChild(item);
 
